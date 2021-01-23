@@ -21,7 +21,7 @@
   </head>
   <body>
     <header>
-      <h1>Monster Slayer</h1>
+      <h1><img class="heading-svg" src="img/monster2.svg" alt=""> Monster Slayer</h1>
     </header>
     <div id="game">
       <section id="monster" class="container">
@@ -44,10 +44,10 @@
         <button @click="startGame">Start New Game</button>
       </section>
       <section id="controls" v-else>
-        <button @click="attackMonster">ATTACK</button>
-        <button :disabled="mayUseSpecialAttack" @click="specialAttackMonster">SPECIAL ATTACK</button>
-        <button @click="healPlayer">HEAL</button>
-        <button @click="surrender">SURRENDER</button>
+        <button @click="attackMonster">ATTACK <img class="button-svg" src="img/attack.svg" alt=""></button>
+        <button :disabled="mayUseSpecialAttack" @click="specialAttackMonster">SPECIAL ATTACK <img class="button-svg" src="img/special.svg" alt=""></button>
+        <button @click="healPlayer">HEAL <img class="button-svg" src="img/heal.svg" alt=""></button>
+        <button @click="surrender">SURRENDER <img class="button-svg" src="img/surrender.svg" alt=""></button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
