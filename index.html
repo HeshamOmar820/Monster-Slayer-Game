@@ -41,7 +41,7 @@
         <h3 v-if="winner ==='monster'">Monnster Won! <br><img class="wining-svg" src="img/monster.svg" alt="monster"></h3>
         <h3 v-else-if="winner ==='player'"> You Won! <br><img class="wining-svg" src="img/player.svg" alt="player"> </h3>
         <h3 v-else="winner ==='draw'">It's a draw! <br><img class="wining-svg" src="img/white-flag.svg" alt="draw"></h3>
-        <button @click="startGame">Start New Game</button>
+        <button class="newgame-button" @click="startGame">Start New Game</button>
       </section>
       <section id="controls" v-else>
         <button @click="attackMonster">ATTACK <img class="button-svg" src="img/attack.svg" alt=""></button>

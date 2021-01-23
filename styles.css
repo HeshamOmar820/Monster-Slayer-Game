@@ -147,3 +147,7 @@ button:disabled {
   width: 70px;
   margin-right: 10px;
 }
+
+.newgame-button{
+  margin: auto;
+}
