@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta property="og:title" content="Monster Slayer">
+    <meta property="og:description" content="A Monster Slayer game made by Vue.js">
+    <meta property="og:url" content="https://heshamomar820.github.io/Monster-Slayer-Game/">
+    <meta property="og:image" content="https://heshamomar820.github.io/Monster-Slayer-Game/img/monster.png">
+    <meta name="twitter:image" content="https://heshamomar820.github.io/Monster-Slayer-Game/img/monster.png">
+    <meta name="author" content="Hesham Omar">
+    <link rel="shortcut icon" href="img/monster.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Slayer</title>
     <link
@@ -31,9 +38,9 @@
       </section>
       <section class="container" v-if="winner">
         <h2>Game Over!</h2>
-        <h3 v-if="winner ==='monster'">You Lost!</h3>
-        <h3 v-else-if="winner ==='player'">You Won!</h3>
-        <h3 v-else="winner ==='draw'">It's a draw!</h3>
+        <h3 v-if="winner ==='monster'">Monnster Won! <br><img class="wining-svg" src="img/monster.svg" alt="monster"></h3>
+        <h3 v-else-if="winner ==='player'"> You Won! <br><img class="wining-svg" src="img/player.svg" alt="player"> </h3>
+        <h3 v-else="winner ==='draw'">It's a draw! <br><img class="wining-svg" src="img/white-flag.svg" alt="draw"></h3>
         <button @click="startGame">Start New Game</button>
       </section>
       <section id="controls" v-else>
@@ -44,10 +51,17 @@
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
-        <ul>
-          
+        <ul >
+          <li v-for="logMessage in logMessages">
+            <span :class="{'log--player': logMessage.actionBy === 'player', 'log--monster': logMessage.actionBy === 'monster'}">{{ logMessage.actionBy === 'player' ? 'Player' : 'Monter' }}</span>
+            <span v-if="logMessage.actionTybe === 'heal'">heals himself for <span class="log--heal">{{ logMessage.actionValue }}</span></span>
+            <span v-else> attacks and deals <span class="log--damage">{{ logMessage.actionValue}}</span></span>
+          </li>
         </ul>
       </section>
     </div>
+    <footer>
+      <h3>© Copyright 2021 Hesham Omar</h3>
+    </footer>
   </body>
 </html>
